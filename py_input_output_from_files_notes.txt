@@ -1,0 +1,23 @@
+open(filename, mode="r")opens a file. More info in the docs.
+
+https://docs.python.org/3/library/functions.html#open
+
+file.read(bytes=-1) would read the entire contents of the file. You can control the number of bytes read by passing in an integer. Relatedly, file.seek() will move the read/write pointer to another part of the file.
+
+file.readlines() reads the entire file into a list, with each line as a list item.
+
+The context manager pattern for dealing with files is:
+
+with open("my_file.txt", "r") as file:
+    file.read(10)
+
+For more about sys.argv, check out the docs.
+
+https://docs.python.org/3/library/sys.html#sys.argv
+
+
+Note:  
+    If file.read(byte_arg) is called multiple times, it reads from where it last left off. Such as, if you read in ten
+    and then called the function again it would read from the eleventh byte.
+
+    To reset or read from the beginning of a file use file.seek(0).
